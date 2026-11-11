@@ -1,0 +1,54 @@
+prefix: '<gradient:#00ff88:#00aaff><bold>Чат</bold></gradient> <dark_gray>» <gray>'
+
+chat:
+  format:
+    local: '<dark_gray>[<#7BE38B>Л<dark_gray>] <white><player><dark_gray> › <gray><message>'
+    global: '<dark_gray>[<#FFD166>Г<dark_gray>] <white><player><dark_gray> › <white><message>'
+  name-hover: '<gray>Нажмите, чтобы написать <white><player>'
+  tag:
+    local: '<dark_gray>[<#7BE38B>Л<dark_gray>]'
+    global: '<dark_gray>[<#FFD166>Г<dark_gray>]'
+
+error:
+  no-permission: '<red>У вас нет прав на это действие.'
+  player-only: '<red>Эта команда доступна только игрокам.'
+  too-long: '<red>Сообщение слишком длинное. Максимум: <white><max></white> символов.'
+  filtered: '<red>Ваше сообщение заблокировано фильтром чата.'
+
+caps:
+  blocked: '<red>Пожалуйста, не используйте так много заглавных букв.'
+
+spam:
+  cooldown: '<red>Не так быстро! Попробуйте снова через <white><seconds> с</white>.'
+  duplicate: '<red>Вы уже отправляли это сообщение. Подождите <white><seconds> с</white>.'
+  rate-limit: '<red>Слишком много сообщений. Попробуйте снова через <white><seconds> с</white>.'
+
+channel:
+  local: '<gray>Теперь вы пишете в <#7BE38B>локальный<gray> чат.'
+  global: '<gray>Теперь вы пишете в <#FFD166>глобальный<gray> чат.'
+  no-permission: '<red>У вас нет прав на глобальный чат.'
+
+ping:
+  enabled: '<gray>Звуки упоминаний <#7BE38B>включены<gray>.'
+  disabled: '<gray>Звуки упоминаний <#FF6B6B>выключены<gray>.'
+
+history:
+  header: '<dark_gray>―― <gray>Последние сообщения <dark_gray>――'
+  line: '<dark_gray>[<gray><time><dark_gray>] <channel> <white><player> <dark_gray>› <gray><message>'
+  empty: '<gray>Сообщений пока нет.'
+  disabled: '<red>История чата отключена.'
+
+reload:
+  success: '<gray>Конфигурация перезагружена.'
+  failed: '<red>Не удалось перезагрузить. Подробности в консоли.'
+
+command:
+  global-usage: '<red>Использование: <white>/globalchat <сообщение>'
+  usage: |-
+    <gray>Команды чата:
+    <dark_gray>• <white>/chat local<dark_gray> - локальный чат
+    <dark_gray>• <white>/chat global<dark_gray> - глобальный чат
+    <dark_gray>• <white>/chat toggle<dark_gray> - переключить канал
+    <dark_gray>• <white>/chat ping<dark_gray> - звуки упоминаний
+    <dark_gray>• <white>/chat history [n]<dark_gray> - последние сообщения
+    <dark_gray>• <white>/chat reload<dark_gray> - перезагрузить конфигурацию

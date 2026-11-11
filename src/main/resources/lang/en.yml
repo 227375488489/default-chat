@@ -1,0 +1,54 @@
+prefix: '<gradient:#00ff88:#00aaff><bold>Chat</bold></gradient> <dark_gray>» <gray>'
+
+chat:
+  format:
+    local: '<dark_gray>[<#7BE38B>L<dark_gray>] <white><player><dark_gray> › <gray><message>'
+    global: '<dark_gray>[<#FFD166>G<dark_gray>] <white><player><dark_gray> › <white><message>'
+  name-hover: '<gray>Click to message <white><player>'
+  tag:
+    local: '<dark_gray>[<#7BE38B>L<dark_gray>]'
+    global: '<dark_gray>[<#FFD166>G<dark_gray>]'
+
+error:
+  no-permission: '<red>You do not have permission to do that.'
+  player-only: '<red>This command can only be used by players.'
+  too-long: '<red>Your message is too long. Maximum length: <white><max></white> characters.'
+  filtered: '<red>Your message was blocked by the chat filter.'
+
+caps:
+  blocked: '<red>Please do not use that many capital letters.'
+
+spam:
+  cooldown: '<red>Slow down! Try again in <white><seconds>s</white>.'
+  duplicate: '<red>You already sent that message. Please wait <white><seconds>s</white>.'
+  rate-limit: '<red>Too many messages. Try again in <white><seconds>s</white>.'
+
+channel:
+  local: '<gray>You are now chatting in <#7BE38B>local<gray> chat.'
+  global: '<gray>You are now chatting in <#FFD166>global<gray> chat.'
+  no-permission: '<red>You do not have permission to use global chat.'
+
+ping:
+  enabled: '<gray>Mention sounds <#7BE38B>enabled<gray>.'
+  disabled: '<gray>Mention sounds <#FF6B6B>disabled<gray>.'
+
+history:
+  header: '<dark_gray>―― <gray>Recent chat <dark_gray>――'
+  line: '<dark_gray>[<gray><time><dark_gray>] <channel> <white><player> <dark_gray>› <gray><message>'
+  empty: '<gray>No messages have been sent yet.'
+  disabled: '<red>Chat history is disabled.'
+
+reload:
+  success: '<gray>Configuration reloaded.'
+  failed: '<red>Reload failed. Check the console for details.'
+
+command:
+  global-usage: '<red>Usage: <white>/globalchat <message>'
+  usage: |-
+    <gray>Chat commands:
+    <dark_gray>• <white>/chat local<dark_gray> - switch to local chat
+    <dark_gray>• <white>/chat global<dark_gray> - switch to global chat
+    <dark_gray>• <white>/chat toggle<dark_gray> - toggle between channels
+    <dark_gray>• <white>/chat ping<dark_gray> - toggle mention sounds
+    <dark_gray>• <white>/chat history [n]<dark_gray> - show recent messages
+    <dark_gray>• <white>/chat reload<dark_gray> - reload the configuration

@@ -1,0 +1,44 @@
+name: DefaultChat
+version: '${version}'
+main: dev.defaultchat.DefaultChatPlugin
+api-version: '1.21.11'
+authors: [ Slavyanin ]
+description: Modern MiniMessage chat with local and global channels, mentions, filters and history.
+website: https://github.com/227375488489/default-chat
+folia-supported: true
+
+commands:
+  chat:
+    description: Manage your chat settings and channels.
+    usage: /chat <local|global|toggle|ping|history|reload>
+    aliases: [ dc, defaultchat ]
+  globalchat:
+    description: Send a message to the global channel.
+    usage: /globalchat <message>
+    aliases: [ g, gc ]
+
+permissions:
+  defaultchat.use:
+    description: Allows using the chat.
+    default: true
+  defaultchat.channel.global:
+    description: Allows sending messages to the global channel.
+    default: true
+  defaultchat.mention:
+    description: Allows pinging players by mentioning their name.
+    default: true
+  defaultchat.format:
+    description: Allows using MiniMessage formatting in chat messages.
+    default: op
+  defaultchat.history:
+    description: Allows viewing the chat history.
+    default: op
+  defaultchat.reload:
+    description: Allows reloading the configuration.
+    default: op
+  defaultchat.bypass.spam:
+    description: Bypasses cooldowns, rate limits and caps checks.
+    default: op
+  defaultchat.bypass.filter:
+    description: Bypasses the word and link filters.
+    default: op

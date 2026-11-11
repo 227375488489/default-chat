@@ -1,0 +1,90 @@
+# DefaultChat configuration
+# Every message lives in lang/en.yml and lang/ru.yml and is written in MiniMessage.
+# Restart-free changes: /chat reload
+
+# Language file to load: en or ru. Missing keys fall back to English.
+language: en
+
+chat:
+  # Channel used when a player joins for the first time: local or global.
+  default-channel: local
+  # Maximum length of a raw message, in characters.
+  max-length: 256
+  # Allow players with defaultchat.format to use a safe MiniMessage subset
+  # (colors, decorations, gradient, rainbow, transition, shadow, sprite).
+  player-minimessage: true
+  # Player names are clickable and suggest /msg <name>.
+  clickable-names: true
+
+  local:
+    enabled: true
+    # Radius in blocks. 0 or less means the local channel reaches everyone.
+    radius: 100
+    # Per-world radius overrides: world name -> radius.
+    world-radius: {}
+
+  global:
+    # Messages starting with this prefix go to global chat. Empty disables it.
+    trigger: "!"
+    # Require defaultchat.channel.global to use global chat.
+    require-permission: false
+
+  # Minimum delay between two messages, in milliseconds.
+  cooldown-ms: 750
+  # Identical messages inside this window are rejected, in seconds.
+  duplicate-window-seconds: 30
+
+  rate-limit:
+    # Send at most this many messages per window. 0 disables the limit.
+    messages: 5
+    seconds: 5
+
+  caps:
+    # Messages shorter than this are never checked.
+    min-length: 6
+    # Block a message when more than this share of its letters is uppercase.
+    max-ratio: 0.7
+    # BLOCK or IGNORE.
+    action: BLOCK
+
+mentions:
+  enabled: true
+  # Names shorter than this are never matched.
+  min-length: 3
+  # Sound played to a mentioned player (no action bar, no title).
+  sound: minecraft:entity.experience_orb.pickup
+  volume: 0.6
+  pitch: 1.4
+  # Minimum seconds between two pings for the same player.
+  cooldown-seconds: 2
+  # MiniMessage style applied to mentioned names. Simple style tags only.
+  highlight: '<#FFD166><bold>'
+
+filters:
+  # Blocked words, case-insensitive. For example: [ "badword", "another" ]
+  words: []
+  # Replacement used when word-action is MASK.
+  word-mask: "****"
+  # MASK replaces blocked words, BLOCK rejects the whole message.
+  word-action: MASK
+  block-links: false
+  # Hosts allowed even when block-links is enabled.
+  link-allowlist: [ "example.com" ]
+
+history:
+  enabled: true
+  # Number of messages kept in memory for /chat history.
+  size: 100
+
+logging:
+  enabled: true
+  # File inside the plugin data folder.
+  file: chat.log
+
+privacy:
+  # Players vanished through a vanish plugin do not receive local messages.
+  respect-vanish: true
+
+storage:
+  # Interval between playerdata.yml saves, in seconds.
+  save-interval-seconds: 300

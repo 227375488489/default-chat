@@ -1,0 +1,38 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Java 25
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build against the oldest supported API (1.21.11)
+        run: ./gradlew build --no-daemon
+
+      - name: Build against the newest API (26.3)
+        run: ./gradlew build -PpaperApi=26.3.build.248-stable --no-daemon
+
+      - name: Upload plugin jar
+        uses: actions/upload-artifact@v4
+        with:
+          name: DefaultChat
+          path: build/libs/DefaultChat-*.jar
+          if-no-files-found: error
